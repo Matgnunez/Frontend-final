@@ -1,0 +1,41 @@
+
+/*uso de flex para el responsive*/
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 800px) {
+    .flex-container {
+        flex-direction: column;
+    }
+}
+
+#caja1 {
+    background-image: url("../../assets/img/bibliotecas.jpg");
+    background-repeat: no-repeat;
+
+    padding: 10% ;
+    border: 4px solid #325168;
+    border-radius: 10px;
+    text-align: left;
+    margin-top: 10px;
+}
+    
+    #caja2{
+        padding: 10% ;
+        border: 4px solid #325168;
+        border-radius: 10px;
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    
+
+
+#titulo{
+ text-align: center;
+ background-color: #325168;
+}
+    
