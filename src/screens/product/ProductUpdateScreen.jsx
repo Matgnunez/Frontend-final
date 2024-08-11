@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { cargarProducto } from '../../fetching/products.fetching'
+import { updateProducts } from '../../fetching/products.fetching'
 import './Product.css'
 
 
+const ProductUpdateScreen = () => {
 
-const ProductScreen = () => {
 
 
 
     const [errorText, setErrorText] = useState('')
     const navigate = useNavigate()
-    const handleSubmit1 = async (event) => {
+    const handleSubmit3 = async (event) => {
         try {
             event.preventDefault()
-            const producto = {
+            const updateProducto = {
                 titulo: event.target.titulo.value,
                 descripcion: event.target.descripcion.value,
                 codigo: event.target.codigo.value,
@@ -22,9 +22,9 @@ const ProductScreen = () => {
                 precio: event.target.precio.value,
 
             }
-            await cargarProducto(producto)
+            await updateProducts(updateProducto)
             setErrorText('')
-            navigate('/product')
+            navigate('/product/')
 
         }
         catch (error) {
@@ -33,8 +33,8 @@ const ProductScreen = () => {
     }
     return (
         <div id="caja2">
-            <form onSubmit={handleSubmit1}>
-                <h1>Modulo Productos</h1>
+            <form onSubmit={handleSubmit3}>
+                <h1>Modificar Productos</h1>
                 <div>
                     <label htmlFor="titulo">Ingrese Título:</label>
                     <input placeholder='Título' id='titulo' name='titulo' />
@@ -61,7 +61,7 @@ const ProductScreen = () => {
                     &&
                     <span style={{ color: 'red' }}>{errorText}</span>
                 }
-                <button type='submit'>Crear</button>
+                <button type='submit'>Modificar</button>
 
             </form >
 
@@ -77,5 +77,5 @@ const ProductScreen = () => {
 
 }
 
-export default ProductScreen
+export default ProductUpdateScreen
 

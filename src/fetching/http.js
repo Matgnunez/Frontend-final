@@ -3,7 +3,9 @@
 
 
 export const HTTP = {
-    GET: async (url, headers) =>{
+
+
+    GET: async (url, headers) => {
         const response = await fetch(url, {
             method: 'GET',
             headers: headers
@@ -11,7 +13,8 @@ export const HTTP = {
         })
         return response.json()
     },
-    POST: async (url, body) =>{
+
+    POST: async (url, body) => {
         const response = await fetch(url, {
             method: 'POST',
             headers: {
@@ -20,9 +23,34 @@ export const HTTP = {
             body: JSON.stringify(body)
         })
         return response.json()
+    },
+    PUT: async (url, body) => {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        })
+        return response.json()
+    },
+
+
+    DELETE: async (url) => {
+        const response = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application.jason"
+
+            },
+
+        })
+        return response.json()
     }
 
 }
+
+
 
 export const URL = {
     URL_API: 'http://localhost:4040',
